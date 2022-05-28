@@ -1,0 +1,5 @@
+FROM jdk1.8.0_251
+MAINTAINER cat
+ADD 0923-spring-cloud-alibaba-provider-1.0.0.jar /opt
+RUN chmod +x /opt/0923-spring-cloud-alibaba-provider-1.0.0.jar
+CMD java -jar /opt/0923-spring-cloud-alibaba-provider-1.0.0.jar

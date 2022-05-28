@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: springboot-k8s
+  name: springboot-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-k8s
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: springboot-k8s
+    spec:
+      containers:
+      - image: 38-springboot-k8s-1.0.0-jar
+        name: 38-springboot-k8s-1-0-0-jar-8ntrx
+        imagePullPolicy: Never
+        resources: {}
+        
+        args: 
+           
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: springboot-k8s
+  name: springboot-k8s
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30008
+  selector:
+    app: springboot-k8s
+  type: NodePort
+status:
+  loadBalancer: {}

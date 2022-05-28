@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: 38-springboot-k8s
+  name: 38-springboot-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 38-springboot-k8s
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: 38-springboot-k8s
+    spec:
+      containers:
+      - image: 38-springboot-k8s-1.0.0-jar
+        name: 38-springboot-k8s-1-0-0-jar
+        imagePullPolicy: Never
+        resources: {}
+status: {}

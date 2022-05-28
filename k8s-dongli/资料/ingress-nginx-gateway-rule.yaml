@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s-ingress-cloud
+spec:
+  rules:
+  - host: www.cloud.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: spring-cloud-alibaba-gateway
+            port: 
+              number: 80
